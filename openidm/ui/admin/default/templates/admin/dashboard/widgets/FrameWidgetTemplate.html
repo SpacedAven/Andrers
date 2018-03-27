@@ -1,0 +1,11 @@
+{{!
+  Copyright 2016-2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+}}
+{{> dashboard/_widgetHeader}}
+<div class="panel-body widget-body">
+    <iframe src="{{frameUrl}}" style="{{#if height}} height:{{height}}; {{else}} height:600px; {{/if}} width:100%;"></iframe>
+</div>

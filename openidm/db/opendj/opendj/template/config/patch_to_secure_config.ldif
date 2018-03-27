@@ -1,0 +1,166 @@
+#
+# Copyright 2017 ForgeRock AS. All Rights Reserved
+#
+# Use of this code requires a commercial software license with ForgeRock AS.
+# or with one of its affiliates. All use shall be exclusively subject
+# to such license between the licensee and ForgeRock AS.
+#
+dn: cn=Access Control Handler,cn=config
+changetype: modify
+replace: ds-cfg-global-aci
+ds-cfg-global-aci: (extop="1.3.6.1.4.1.26027.1.6.3 || 1.3.6.1.4.1.1466.20037") (version 3.0; acl "Anonymous extended operation access"; allow(read) userdn="ldap:///anyone";)
+ds-cfg-global-aci: (extop="1.3.6.1.4.1.4203.1.11.1 || 1.3.6.1.4.1.4203.1.11.3 || 1.3.6.1.1.8") (version 3.0; acl "Authenticated users extended operation access"; allow(read) userdn="ldap:///all";)
+ds-cfg-global-aci: (target="ldap:///")(targetscope="base") (targetattr="objectClass||namingContexts||supportedAuthPasswordSchemes ||supportedControl||supportedExtension||supportedFeatures||supportedLDAPVersion ||supportedSASLMechanisms||supportedTLSCiphers||supportedTLSProtocols|| vendorName||vendorVersion")(version 3.0; acl "User-Visible Root DSE Operational Attributes"; allow (read,search,compare) userdn="ldap:///anyone";)
+ds-cfg-global-aci: (target="ldap:///cn=schema")(targetscope="base") (targetattr="objectClass||attributeTypes||dITContentRules||dITStructureRules ||ldapSyntaxes||matchingRules||matchingRuleUse||nameForms||objectClasses") (version 3.0; acl "User-Visible Schema Operational Attributes"; allow (read,search,compare) userdn="ldap:///all";)
+ds-cfg-global-aci: (targetcontrol="1.3.6.1.4.1.36733.2.1.5.1") (version 3.0; acl "Transaction ID control access"; allow(read) userdn="ldap:///all";)
+ds-cfg-global-aci: (targetcontrol="1.3.6.1.1.13.1||1.3.6.1.1.13.2 ||1.2.840.113556.1.4.805||1.2.840.113556.1.4.1413") (version 3.0; acl "REST to LDAP control access"; allow(read) userdn="ldap:///all";)
+-
+
+dn: cn=Crypto Manager,cn=config
+changetype: modify
+delete: ds-cfg-ssl-encryption
+ds-cfg-ssl-encryption: false
+-
+add: ds-cfg-ssl-encryption
+ds-cfg-ssl-encryption: true
+-
+
+dn: cn=HTTP Anonymous,cn=HTTP Authorization Mechanisms,cn=config
+changetype: modify
+delete: ds-cfg-enabled
+ds-cfg-enabled: true
+-
+add: ds-cfg-enabled
+ds-cfg-enabled: false
+-
+
+dn: cn=File-Based Access Logger,cn=Loggers,cn=config
+changetype: modify
+delete: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 640
+-
+add: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 600
+-
+
+dn: cn=File-Based Audit Logger,cn=Loggers,cn=config
+changetype: modify
+delete: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 640
+-
+add: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 600
+-
+
+dn: cn=File-Based Debug Logger,cn=Loggers,cn=config
+changetype: modify
+delete: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 640
+-
+add: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 600
+-
+
+dn: cn=File-Based Error Logger,cn=Loggers,cn=config
+changetype: modify
+delete: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 640
+-
+add: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 600
+-
+
+dn: cn=File-Based HTTP Access Logger,cn=Loggers,cn=config
+changetype: modify
+delete: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 640
+-
+add: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 600
+-
+
+dn: cn=Replication Repair Logger,cn=Loggers,cn=config
+changetype: modify
+delete: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 640
+-
+add: ds-cfg-log-file-permissions
+ds-cfg-log-file-permissions: 600
+-
+
+dn: cn=Random Password Generator,cn=Password Generators,cn=config
+changetype: modify
+delete: ds-cfg-password-character-set
+ds-cfg-password-character-set: alpha:abcdefghijklmnopqrstuvwxyz
+ds-cfg-password-character-set: numeric:0123456789
+-
+add: ds-cfg-password-character-set
+ds-cfg-password-character-set: alphanum:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+-
+delete: ds-cfg-password-format
+ds-cfg-password-format: alpha:3,numeric:2,alpha:3
+-
+add: ds-cfg-password-format
+ds-cfg-password-format: alphanum:10
+-
+
+dn: cn=Default Password Policy,cn=Password Policies,cn=config
+changetype: modify
+add: ds-cfg-password-validator
+ds-cfg-password-validator: cn=At least 8 characters,cn=Password Validators,cn=config
+ds-cfg-password-validator: cn=Common passwords,cn=Password Validators,cn=config
+-
+
+dn: cn=Root Password Policy,cn=Password Policies,cn=config
+changetype: modify
+add: ds-cfg-password-validator
+ds-cfg-password-validator: cn=At least 8 characters,cn=Password Validators,cn=config
+ds-cfg-password-validator: cn=Common passwords,cn=Password Validators,cn=config
+-
+delete: ds-cfg-require-secure-authentication
+ds-cfg-require-secure-authentication: false
+-
+add: ds-cfg-require-secure-authentication
+ds-cfg-require-secure-authentication: true
+-
+
+dn: cn=At least 8 characters,cn=Password Validators,cn=config
+changetype: add
+objectClass: ds-cfg-length-based-password-validator
+objectClass: ds-cfg-password-validator
+objectClass: top
+ds-cfg-enabled: true
+cn: At least 8 characters
+ds-cfg-java-class: org.opends.server.extensions.LengthBasedPasswordValidator
+ds-cfg-min-password-length: 8
+
+dn: cn=Common passwords,cn=Password Validators,cn=config
+changetype: add
+objectClass: ds-cfg-dictionary-password-validator
+objectClass: ds-cfg-password-validator
+objectClass: top
+ds-cfg-case-sensitive-validation: false
+ds-cfg-enabled: true
+ds-cfg-test-reversed-password: false
+cn: Common passwords
+ds-cfg-java-class: org.opends.server.extensions.DictionaryPasswordValidator
+ds-cfg-dictionary-file: config/common-passwords.txt
+
+dn: cn=CRAM-MD5,cn=SASL Mechanisms,cn=config
+changetype: modify
+delete: ds-cfg-enabled
+ds-cfg-enabled: true
+-
+add: ds-cfg-enabled
+ds-cfg-enabled: false
+-
+
+dn: cn=DIGEST-MD5,cn=SASL Mechanisms,cn=config
+changetype: modify
+delete: ds-cfg-enabled
+ds-cfg-enabled: true
+-
+add: ds-cfg-enabled
+ds-cfg-enabled: false
+-
+

@@ -1,0 +1,139 @@
+#
+# Copyright 2017 ForgeRock AS. All Rights Reserved
+#
+# Use of this code requires a commercial software license with ForgeRock AS.
+# or with one of its affiliates. All use shall be exclusively subject
+# to such license between the licensee and ForgeRock AS.
+#
+dn: cn=Access Control Handler,cn=config
+changetype: delete
+
+dn: cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-access-control-handler
+objectClass: ds-cfg-policy-based-access-control-handler
+cn: Access Control Handler
+ds-cfg-java-class: org.opends.server.authorization.policy.PolicyBasedAccessControlHandler
+ds-cfg-enabled: true
+
+dn: cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-branch
+cn: Global Access Control Policies
+
+dn: cn=Anonymous access all entries,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Anonymous access all entries
+ds-cfg-authentication-required: false
+ds-cfg-request-target-dn-not-equal-to: **,cn=changelog
+ds-cfg-permission: read
+ds-cfg-allowed-attribute: *
+ds-cfg-allowed-attribute: createTimestamp
+ds-cfg-allowed-attribute: creatorsName
+ds-cfg-allowed-attribute: entryDN
+ds-cfg-allowed-attribute: entryUUID
+ds-cfg-allowed-attribute: etag
+ds-cfg-allowed-attribute: governingStructureRule
+ds-cfg-allowed-attribute: hasSubordinates
+ds-cfg-allowed-attribute: isMemberOf
+ds-cfg-allowed-attribute: modifiersName
+ds-cfg-allowed-attribute: modifyTimestamp
+ds-cfg-allowed-attribute: numSubordinates
+ds-cfg-allowed-attribute: structuralObjectClass
+ds-cfg-allowed-attribute: subschemaSubentry
+ds-cfg-allowed-attribute-exception: authPassword
+ds-cfg-allowed-attribute-exception: userPassword
+ds-cfg-allowed-attribute-exception: debugSearchIndex
+ds-cfg-allowed-attribute-exception: @changeLogEntry
+ds-cfg-allowed-control: AuthorizationIdentity
+ds-cfg-allowed-control: ManageDsaIt
+ds-cfg-allowed-control: Noop
+ds-cfg-allowed-control: PasswordPolicy
+ds-cfg-allowed-control: PermissiveModify
+ds-cfg-allowed-control: RealAttributesOnly
+ds-cfg-allowed-control: TransactionId
+ds-cfg-allowed-control: VirtualAttributesOnly
+ds-cfg-allowed-extended-operation: GetSymmetricKey
+ds-cfg-allowed-extended-operation: PasswordModify
+ds-cfg-allowed-extended-operation: PasswordPolicyState
+ds-cfg-allowed-extended-operation: StartTls
+ds-cfg-allowed-extended-operation: WhoAmI
+
+dn: cn=Authenticated access all entries,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Authenticated access all entries
+ds-cfg-authentication-required: true
+ds-cfg-allowed-control: Assertion
+ds-cfg-allowed-control: Csn
+ds-cfg-allowed-control: MatchedValues
+ds-cfg-allowed-control: PostRead
+ds-cfg-allowed-control: PreRead
+ds-cfg-allowed-control: ProxiedAuthV2
+ds-cfg-allowed-control: ServerSideSort
+ds-cfg-allowed-control: SimplePagedResults
+ds-cfg-allowed-control: Vlv
+
+dn: cn=Self access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Self access
+ds-cfg-authentication-required: true
+ds-cfg-request-target-dn-equal-to-user-dn: true
+ds-cfg-permission: read
+ds-cfg-permission: write
+ds-cfg-allowed-attribute: audio
+ds-cfg-allowed-attribute: authPassword
+ds-cfg-allowed-attribute: description
+ds-cfg-allowed-attribute: displayName
+ds-cfg-allowed-attribute: givenName
+ds-cfg-allowed-attribute: homePhone
+ds-cfg-allowed-attribute: homePostalAddress
+ds-cfg-allowed-attribute: initials
+ds-cfg-allowed-attribute: jpegPhoto
+ds-cfg-allowed-attribute: labeledURI
+ds-cfg-allowed-attribute: mobile
+ds-cfg-allowed-attribute: pager
+ds-cfg-allowed-attribute: postalAddress
+ds-cfg-allowed-attribute: postalCode
+ds-cfg-allowed-attribute: preferredLanguage
+ds-cfg-allowed-attribute: telephoneNumber
+ds-cfg-allowed-attribute: userPassword
+
+dn: cn=Schema access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Schema access
+ds-cfg-authentication-required: false
+ds-cfg-request-target-dn-equal-to: cn=schema
+ds-cfg-permission: read
+ds-cfg-allowed-attribute: objectClass
+ds-cfg-allowed-attribute: @subschema
+
+dn: cn=Root DSE access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Root DSE access
+ds-cfg-authentication-required: false
+ds-cfg-request-target-dn-equal-to:
+ds-cfg-permission: read
+ds-cfg-allowed-attribute: objectClass
+ds-cfg-allowed-attribute: namingContexts
+ds-cfg-allowed-attribute: supportedAuthPasswordSchemes
+ds-cfg-allowed-attribute: supportedControl
+ds-cfg-allowed-attribute: supportedExtension
+ds-cfg-allowed-attribute: supportedFeatures
+ds-cfg-allowed-attribute: supportedLDAPVersion
+ds-cfg-allowed-attribute: supportedSASLMechanisms
+ds-cfg-allowed-attribute: supportedTLSCiphers
+ds-cfg-allowed-attribute: supportedTLSProtocols
+ds-cfg-allowed-attribute: vendorName
+ds-cfg-allowed-attribute: vendorVersion

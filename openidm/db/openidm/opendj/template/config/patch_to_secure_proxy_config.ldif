@@ -1,0 +1,94 @@
+#
+# Copyright 2017 ForgeRock AS. All Rights Reserved
+#
+# Use of this code requires a commercial software license with ForgeRock AS.
+# or with one of its affiliates. All use shall be exclusively subject
+# to such license between the licensee and ForgeRock AS.
+#
+dn: cn=Access Control Handler,cn=config
+changetype: delete
+
+dn: cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-access-control-handler
+objectClass: ds-cfg-policy-based-access-control-handler
+cn: Access Control Handler
+ds-cfg-java-class: org.opends.server.authorization.policy.PolicyBasedAccessControlHandler
+ds-cfg-enabled: true
+
+dn: cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-branch
+cn: Global Access Control Policies
+
+dn: cn=Anonymous users extended operation access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Anonymous users extended operation access
+ds-cfg-authentication-required: false
+ds-cfg-allowed-extended-operation: StartTls
+ds-cfg-allowed-extended-operation: GetSymmetricKey
+
+dn: cn=Authenticated users extended operation access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Authenticated users extended operation access
+ds-cfg-authentication-required: true
+ds-cfg-allowed-extended-operation: PasswordModify
+ds-cfg-allowed-extended-operation: WhoAmI
+ds-cfg-allowed-extended-operation: Cancel
+
+dn: cn=REST to LDAP control access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: REST to LDAP control access
+ds-cfg-authentication-required: true
+ds-cfg-allowed-control: PreRead
+ds-cfg-allowed-control: PostRead
+ds-cfg-allowed-control: SubtreeDelete
+ds-cfg-allowed-control: PermissiveModify
+
+dn: cn=Transaction ID control access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Transaction ID control access
+ds-cfg-authentication-required: true
+ds-cfg-allowed-control: TransactionId
+
+dn: cn=Schema access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Schema access
+ds-cfg-authentication-required: true
+ds-cfg-request-target-dn-equal-to: cn=schema
+ds-cfg-permission: read
+ds-cfg-allowed-attribute: objectClass
+ds-cfg-allowed-attribute: @subschema
+
+dn: cn=Root DSE access,cn=Global Access Control Policies,cn=Access Control Handler,cn=config
+changetype: add
+objectClass: top
+objectClass: ds-cfg-global-access-control-policy
+cn: Root DSE access
+ds-cfg-authentication-required: false
+ds-cfg-request-target-dn-equal-to:
+ds-cfg-permission: read
+ds-cfg-allowed-attribute: objectClass
+ds-cfg-allowed-attribute: namingContexts
+ds-cfg-allowed-attribute: supportedAuthPasswordSchemes
+ds-cfg-allowed-attribute: supportedControl
+ds-cfg-allowed-attribute: supportedExtension
+ds-cfg-allowed-attribute: supportedFeatures
+ds-cfg-allowed-attribute: supportedLDAPVersion
+ds-cfg-allowed-attribute: supportedSASLMechanisms
+ds-cfg-allowed-attribute: supportedTLSCiphers
+ds-cfg-allowed-attribute: supportedTLSProtocols
+ds-cfg-allowed-attribute: vendorName
+ds-cfg-allowed-attribute: vendorVersion

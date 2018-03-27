@@ -1,0 +1,204 @@
+{
+    "artifact": {
+        "groupId": "org.forgerock.opendj",
+        "artifactId": "opendj-server",
+        "version": "5.5.0"
+    },
+    "copyrights": [
+        "Copyright 2010-2017 ForgeRock AS",
+        "Copyright 2015 Tobias Fischer",
+        "Copyright 2013-2014 Manuel Gaupp",
+        "Copyright 2011-2012 profiq, s.r.o.",
+        "Copyright 2005-2011 Sun Microsystems, Inc",
+        "Copyright 2000-2011 The Legion Of The Bouncy Castle",
+        "Copyright 2006 Damien Miller",
+        "Copyright 1984-1988 AT",
+        "Portions Copyright 2010-2017 ForgeRock AS",
+        "Portions Copyright 2015 Edan Idzerda",
+        "Portions Copyright 2014 Emidio Stani",
+        "Portions Copyright 2012-2014 Manuel Gaupp",
+        "Portions Copyright 2014 The Apache Software Foundation",
+        "Portions Copyright 2012 Dariusz Janny",
+        "Portions Copyright 2011-2012 profiq, s.r.o.",
+        "Portions Copyright 2009 D. J. Hagberg, Millibits Consulting, Inc",
+        "Portions Copyright 2009 Parametric Technology Corporation",
+        "Portions Copyright 2006-2008 Sun Microsystems, Inc",
+        "Portions Copyright 2006-2007 Brighton Consulting, Inc"
+    ],
+    "dependencies": {
+        "api-descriptor-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS"
+        ],
+        "chf-client-apache-async-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS"
+        ],
+        "chf-client-apache-common-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS"
+        ],
+        "chf-http-core-22.0.0": [
+            "Copyright 2012-2017 ForgeRock AS",
+            "Copyright 2010-2011 ApexIdentity Inc",
+            "Copyright 2009 Sun Microsystems, Inc",
+            "Portions Copyright 2011-2017 ForgeRock AS",
+            "Portions Copyright 2010-2011 ApexIdentity Inc"
+        ],
+        "chf-http-grizzly-22.0.0": [
+            "Copyright 2016-2017 ForgeRock AS"
+        ],
+        "chf-oauth2-22.0.0": [
+            "Copyright 2014-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-core-22.0.0": [
+            "Copyright 2011-2017 ForgeRock AS",
+            "Copyright 2013 Cybernetica AS",
+            "Copyright 2006-2008 Sun Microsystems, Inc",
+            "Portions Copyright 2013-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-handler-csv-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-handler-elasticsearch-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-handler-jdbc-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS",
+            "Portions Copyright 2016 Nomura Research Institute, Ltd"
+        ],
+        "forgerock-audit-handler-jms-22.0.0": [
+            "Copyright 2016-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-handler-json-22.0.0": [
+            "Copyright 2016-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-handler-splunk-22.0.0": [
+            "Copyright 2016-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-handler-syslog-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS",
+            "Copyright 2013 Cybernetica AS",
+            "Portions Copyright 2014-2017 ForgeRock AS"
+        ],
+        "forgerock-audit-json-22.0.0": [
+            "Copyright 2015-2017 ForgeRock AS"
+        ],
+        "forgerock-guava-annotations-18.0.4": [
+            "Copyright 2014-2015 ForgeRock AS"
+        ],
+        "forgerock-guava-base-18.0.4": [
+            "Copyright 2014-2015 ForgeRock AS"
+        ],
+        "forgerock-guava-cache-18.0.4": [
+            "Copyright 2014-2015 ForgeRock AS"
+        ],
+        "forgerock-guava-collect-18.0.4": [
+            "Copyright 2014-2015 ForgeRock AS"
+        ],
+        "forgerock-guava-concurrent-18.0.4": [
+            "Copyright 2014-2015 ForgeRock AS"
+        ],
+        "forgerock-guava-math-18.0.4": [
+            "Copyright 2014-2015 ForgeRock AS"
+        ],
+        "forgerock-guava-primitives-18.0.4": [
+            "Copyright 2014-2015 ForgeRock AS"
+        ],
+        "forgerock-je-7.4.5-1": [
+            "Copyright 1996, 1997, 2000, 2002-2017 Oracle and/or its affiliates",
+            "Copyright 2000-2013 INRIA, France Telecom"
+        ],
+        "forgerock-persistit-core-4.3.3": [
+            "Copyright 2015 ForgeRock AS",
+            "Copyright 2014 SonarSource",
+            "Copyright 2005-2013 Akiban Technologies, Inc"
+        ],
+        "forgerock-util-22.0.0": [
+            "Copyright 2011-2017 ForgeRock AS",
+            "Copyright 2014-2015 Stack overflow users",
+            "Copyright 2010-2011 ApexIdentity Inc",
+            "Portions Copyright 2011-2017 ForgeRock AS"
+        ],
+        "i18n-core-1.4.2": [
+            "Copyright 2011-2012 ForgeRock AS",
+            "Copyright 2007-2009 Sun Microsystems, Inc",
+            "Portions Copyright 2011-2012 ForgeRock AS"
+        ],
+        "i18n-slf4j-1.4.2": [
+            "Copyright 2011-2014 ForgeRock AS"
+        ],
+        "json-resource-22.0.0": [
+            "Copyright 2011-2017 ForgeRock AS"
+        ],
+        "json-resource-http-22.0.0": [
+            "Copyright 2012-2017 ForgeRock AS"
+        ],
+        "json-schema-core-22.0.0": [
+            "Copyright 2011-2017 ForgeRock AS"
+        ],
+        "json-web-token-22.0.0": [
+            "Copyright 2011-2017 ForgeRock AS"
+        ],
+        "opendj-cli-5.5.0": [
+            "Copyright 2014-2017 ForgeRock AS",
+            "Copyright 2006-2010 Sun Microsystems, Inc",
+            "Portions Copyright 2011-2017 ForgeRock AS",
+            "Portions Copyright 2011 Nemanja Lukic",
+            "Portions Copyright 2009 Parametric Technology Corporation"
+        ],
+        "opendj-config-5.5.0": [
+            "Copyright 2011-2017 ForgeRock AS",
+            "Copyright 2006-2010 Sun Microsystems, Inc",
+            "Portions Copyright 2011-2017 ForgeRock AS",
+            "Portions Copyright 2012 profiq, s.r.o.",
+            "Portions Copyright 2007-2010 Sun Microsystems, Inc"
+        ],
+        "opendj-core-5.5.0": [
+            "Copyright 2011-2017 ForgeRock AS",
+            "Copyright 2013-2014 Manuel Gaupp",
+            "Copyright 2006-2011 Sun Microsystems, Inc",
+            "Portions Copyright 2011-2017 ForgeRock AS",
+            "Portions Copyright 2016 Matthew Stevenson",
+            "Portions Copyright 2012-2014 Manuel Gaupp",
+            "Portions Copyright 2009 D. J. Hagberg, Millibits Consulting, Inc"
+        ],
+        "opendj-grizzly-5.5.0": [
+            "Copyright 2013-2017 ForgeRock AS",
+            "Copyright 2006-2010 Sun Microsystems, Inc",
+            "Portions Copyright 2011-2017 ForgeRock AS"
+        ],
+        "opendj-ldap-toolkit-5.5.0": [
+            "Copyright 2011-2017 ForgeRock AS",
+            "Copyright 2006-2010 Sun Microsystems, Inc",
+            "Portions Copyright 2011-2017 ForgeRock AS"
+        ],
+        "opendj-parent-5.5.0": [
+            "Copyright 2010-2017 ForgeRock AS",
+            "Copyright 2015 Tobias Fischer",
+            "Copyright 2013-2014 Manuel Gaupp",
+            "Copyright 2011-2012 profiq, s.r.o.",
+            "Copyright 2005-2011 Sun Microsystems, Inc",
+            "Copyright 2000-2011 The Legion Of The Bouncy Castle",
+            "Copyright 2006 Damien Miller",
+            "Copyright 2000-2005 INRIA, France Telecom",
+            "Copyright 1984-1988 AT",
+            "Portions Copyright 2010-2017 ForgeRock AS",
+            "Portions Copyright 2016 Matthew Stevenson",
+            "Portions Copyright 2015 Edan Idzerda",
+            "Portions Copyright 2014 Emidio Stani",
+            "Portions Copyright 2012-2014 Manuel Gaupp",
+            "Portions Copyright 2014 The Apache Software Foundation",
+            "Portions Copyright 2012 Dariusz Janny",
+            "Portions Copyright 2011-2012 profiq, s.r.o.",
+            "Portions Copyright 2011 Nemanja Lukic",
+            "Portions Copyright 2006-2010 Sun Microsystems, Inc",
+            "Portions Copyright 2009 D. J. Hagberg, Millibits Consulting, Inc",
+            "Portions Copyright 2009 Parametric Technology Corporation",
+            "Portions Copyright 2006-2007 Brighton Consulting, Inc"
+        ],
+        "opendj-rest2ldap-5.5.0": [
+            "Copyright 2012-2017 ForgeRock AS"
+        ],
+        "security-22.0.0": [
+            "Copyright 2013-2017 ForgeRock AS"
+        ]
+    }
+}

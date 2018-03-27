@@ -1,0 +1,99 @@
+[
+    {
+        "operation" : "remove",
+        "field" : "/queries/explicitTables/scan-tasks"
+    },
+    {
+        "operation" : "remove",
+        "field" : "/queries/genericTables/scan-tasks"
+    },
+    {
+       "operation" : "add",
+       "field" : "/resourceMapping/explicitMapping/clusteredrecontargetids",
+       "value":  {
+           "table" : "clusteredrecontargetids",
+           "objectToColumn" : {
+               "_id" : "objectid",
+               "_rev" : "rev",
+               "reconId" : "reconid",
+               "targetIds" : {"column" : "targetids", "type" : "JSON_LIST"}
+           }
+        }
+    },
+    {
+        "operation" : "add",
+        "field" : "/commands/explicitTables/delete-target-ids-for-recon",
+        "value" : "DELETE FROM ${_dbSchema}.${_table} WHERE reconId = ${reconId}"
+    },
+    {
+        "operation" : "add",
+        "field" : "/resourceMapping/genericMapping/reconprogressstate",
+        "value" : {
+            "mainTable" : "genericobjects",
+            "propertiesTable" : "genericobjectproperties",
+            "searchableDefault" : false,
+            "properties" : {
+                "/reconId" : {
+                    "searchable" : true
+                },
+                "/startTime" : {
+                    "searchable" : true
+                }
+            }
+        }
+    },
+    {
+        "operation" : "add",
+        "field" : "/resourceMapping/genericMapping/jsonstorage",
+        "value" : {
+            "mainTable" : "genericobjects",
+            "propertiesTable" : "genericobjectproperties",
+            "searchableDefault" : false,
+            "properties" : {
+                "/timestamp" : {
+                    "searchable" : true
+                }
+            }
+        }
+    },
+    {
+        "operation" : "add",
+        "field" : "/resourceMapping/explicitMapping/audit%2Fauthentication/objectToColumn/provider",
+        "value" : "provider"
+    },
+    {
+        "operation" : "add",
+        "field" : "/resourceMapping/explicitMapping/audit%2Fauthentication/objectToColumn/method",
+        "value" : "method"
+    },
+    {
+        "operation" : "add",
+        "field" : "/resourceMapping/explicitMapping/audit%2Factivity/objectToColumn/provider",
+        "value" : "provider"
+    },
+    {
+        "operation" : "add",
+        "field" : "/resourceMapping/explicitMapping/audit%2Factivity/objectToColumn/context",
+        "value" : "context"
+    },
+    {
+        "operation" : "transform",
+        "field" : "/resourceMapping/genericMapping",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "if (content.relationship) { content.relationships = content.relationship; delete content.relationship; } content;"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/resourceMapping/genericMapping",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "if (content.scheduler) { content['scheduler/*'] = content.scheduler; } content;"
+            }
+        }
+    }
+]

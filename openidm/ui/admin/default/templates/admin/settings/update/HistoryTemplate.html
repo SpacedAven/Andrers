@@ -1,0 +1,26 @@
+{{!
+  Copyright 2016-2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+}}
+<div class="panel-heading" role="tab" id="updateHistoryHeader">
+
+    <h4 class="panel-title">
+        <a data-toggle="collapse" href="#updateHistoryBody" aria-expanded="false" aria-controls="updateHistoryHeader" role="button">
+            {{t "templates.update.history.header"}}
+        </a>
+    </h4>
+</div>
+
+<div id="updateHistoryBody" class="collapse" role="tabpanel" aria-labelledby="updateHistoryHeader" aria-expanded="false">
+    <div class="panel-body">
+
+        <p class="panel-description">
+            {{t "templates.update.history.description"}}
+        </p>
+
+        <div id="historyGrid"></div>
+    </div>
+</div>

@@ -1,0 +1,278 @@
+===========================================
+== OpenDJ 5.5.0 - Open Source Copyrights ==
+===========================================
+
+activation-1.1.jar
+==================
+Licensed under CDDL 1.0
+License terms can be found at: http://maven.ibiblio.org/maven2/javax/activation/activation/1.1/activation-1.1.pom
+Copyright 2006 SUN MICROSYSTEMS, INC.
+
+forgerock-guava-annotations-18.0.4.jar
+======================================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/google/guava/blob/master/pom.xml
+2013 Copyright (C) 2013 The Guava Authors
+
+forgerock-guava-base-18.0.4.jar
+===============================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/google/guava/blob/master/pom.xml
+2013 Copyright (C) 2013 The Guava Authors
+
+forgerock-guava-cache-18.0.4.jar
+================================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/google/guava/blob/master/pom.xml
+2013 Copyright (C) 2013 The Guava Authors
+
+forgerock-guava-collect-18.0.4.jar
+==================================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/google/guava/blob/master/pom.xml
+2013 Copyright (C) 2013 The Guava Authors
+
+forgerock-guava-concurrent-18.0.4.jar
+=====================================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/google/guava/blob/master/pom.xml
+2013 Copyright (C) 2013 The Guava Authors
+
+forgerock-guava-math-18.0.4.jar
+===============================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/google/guava/blob/master/pom.xml
+2013 Copyright (C) 2013 The Guava Authors
+
+forgerock-guava-primitives-18.0.4.jar
+=====================================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/google/guava/blob/master/pom.xml
+2013 Copyright (C) 2013 The Guava Authors
+
+forgerock-je-7.4.5-1.jar
+========================
+Licensed under Apache 2.0
+License terms can be found at: https://docs.oracle.com/cd/E17277_02/html/LICENSE.txt
+2016 Copyright (C) 2002, 2016, Oracle and/or its affiliates. All rights reserved.
+
+forgerock-persistit-core-4.3.3.jar
+==================================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/pbeaman/persistit/blob/master/pom.xml
+2013 Copyright 2005-2013 Akiban Technologies, Inc. Copyright 2014 SonarSource Portions Copyright 2015-2017 ForgeRock AS.
+
+grizzly-framework-2.3.30.jar
+============================
+Licensed under CDDL 1.0
+Source Code can be found at: http://java.net/projects/grizzly/sources/git/show/grizzly-framework
+License terms can be found at: https://maven-central.storage.googleapis.com/org/glassfish/grizzly/grizzly-framework/2.3.30/grizzly-framework-2.3.30.pom
+Copyright Oracle Corporation
+
+grizzly-http-2.3.30.jar
+=======================
+Licensed under CDDL 1.0
+Source Code can be found at: http://java.net/projects/grizzly/sources/git/show/grizzly-http
+License terms can be found at: https://mvnrepository.com/artifact/org.glassfish.grizzly/grizzly-http/2.3.30
+Copyright Oracle Corporation
+
+grizzly-http-server-2.3.30.jar
+==============================
+Licensed under CDDL 1.0
+Source Code can be found at: http://java.net/projects/grizzly/sources/git/show/grizzly-http-server
+License terms can be found at: https://mvnrepository.com/artifact/org.glassfish.grizzly/grizzly-http/2.3.30
+Copyright Oracle Corporation
+
+HdrHistogram-2.1.4.jar
+======================
+Licensed under CC0
+Source Code can be found at: scm:git:git://github.com/HdrHistogram/HdrHistogram.git
+License terms can be found at: http://mirrors.ibiblio.org/pub/mirrors/maven2/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.pom
+Copyright 2014 Gil Tene
+Copyright 2014 Michael Barker
+Copyright 2014 Matt Warren
+
+hdrhistogram-metrics-reservoir-1.1.0.jar
+========================================
+Licensed under Apache 2.0
+Source Code can be found at: scm:git@bitbucket.org:marshallpierce/hdrhistogram-metrics-reservoir.git
+License terms can be found at: https://maven-central.storage.googleapis.com/org/mpierce/metrics/reservoir/hdrhistogram-metrics-reservoir/1.1.0/hdrhistogram-metrics-reservoir-1.1.0.pom
+2014 Copyright 2014 Marshall Pierce
+
+httpasyncclient-osgi-4.1.2.jar
+==============================
+Licensed under Apache 2.0
+Source Code can be found at: https://svn.apache.org/repos/asf/httpcomponents/httpasyncclient/tags/4.1.2/httpasyncclient-osgi
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/org/apache/httpcomponents/httpasyncclient-osgi/4.1.2/httpasyncclient-osgi-4.1.2.pom
+Copyright 2010 The Apache Software Foundation
+
+httpclient-osgi-4.5.2.jar
+=========================
+Licensed under Apache 2.0
+Source Code can be found at: https://svn.apache.org/repos/asf/httpcomponents/httpclient/tags/4.5.2/httpclient-osgi
+License terms can be found at: https://maven-central.storage.googleapis.com/org/apache/httpcomponents/httpclient-osgi/4.5.2/httpclient-osgi-4.5.2.pom
+Copyright 1999 The Apache Software Foundation
+
+httpcore-osgi-4.4.5.jar
+=======================
+Licensed under Apache 2.0
+Source Code can be found at: https://svn.apache.org/repos/asf/httpcomponents/httpcore/tags/4.4.5/httpcore-osgi
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/org/apache/httpcomponents/httpcore-osgi/4.4.5/httpcore-osgi-4.4.5.pom
+Copyright 2005 The Apache Software Foundation
+
+jackson-annotations-2.8.9.jar
+=============================
+Licensed under Apache 2.0
+License terms can be found at: http://github.com/FasterXML/jackson
+2017 Copyright (c) 2007- Tatu Saloranta, tatu.saloranta@iki.fi + new contributions without copyright
+
+jackson-core-2.8.9.jar
+======================
+Licensed under Apache 2.0
+License terms can be found at: https://github.com/FasterXML/jackson-core
+2007 Copyright (c) 2007- Tatu Saloranta, tatu.saloranta@iki.fi
+
+jackson-databind-2.8.9.jar
+==========================
+Licensed under Apache 2.0
+
+2017 Copyright (c) 2007- Tatu Saloranta, tatu.saloranta@iki.fi + new contributions without copyright
+
+jackson-module-jsonSchema-2.8.9.jar
+===================================
+Licensed under Apache 2.0
+Source Code can be found at: http://github.com/FasterXML/jackson-module-jsonSchema
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/com/fasterxml/jackson/module/jackson-module-jsonSchema/2.8.9/jackson-module-jsonSchema-2.8.9.pom
+Copyright FasterXML
+
+javax.jms-api-2.0.1.jar
+=======================
+Licensed under CDDL 1.0
+Source Code can be found at: https://github.com/sonatype/jvnet-parent/javax.jms-api
+License terms can be found at: https://mvnrepository.com/artifact/javax.jms/javax.jms-api/2.0.1
+Copyright 2015 Oracle and/or its affiliates
+
+javax.mail-1.5.1.jar
+====================
+Licensed under CDDL 1.0
+Source Code can be found at: http://java.net/hg/javamail~mercurial/javax.mail
+License terms can be found at: https://mvnrepository.com/artifact/com.sun.mail/javax.mail/1.5.1
+Copyright Oracle
+
+jcip-annotations-1.0-1.jar
+==========================
+Licensed under Apache 2.0
+Source Code can be found at: http://github.com/stephenc/jcip-annotations/tree/master/
+License terms can be found at: http://maven.ibiblio.org/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.pom
+Copyright 2013 Stephen Connolly
+
+jcl-over-slf4j-1.7.21.jar
+=========================
+Licensed under MIT
+Source Code can be found at: https://github.com/qos-ch/slf4j/jcl-over-slf4j
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/org/slf4j/jcl-over-slf4j/1.7.21/jcl-over-slf4j-1.7.21.pom
+Copyright 2005 QOS.ch
+
+joda-time-2.9.7.jar
+===================
+Licensed under Apache 2.0
+Source Code can be found at: https://github.com/JodaOrg/joda-time
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/joda-time/joda-time/2.9.7/joda-time-2.9.7.pom
+Copyright 2002 Joda.org
+
+jsr305-3.0.0.jar
+================
+Licensed under Apache 2.0
+Source Code can be found at: https://code.google.com/p/findbugs/
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.pom
+Copyright 2012 University of Maryland
+
+juel-api-2.2.7.jar
+==================
+Licensed under Apache 2.0
+Source Code can be found at: https://github.com/beckchr/juel/juel-api
+License terms can be found at: https://maven-central.storage.googleapis.com/de/odysseus/juel/juel-api/2.2.7/juel-api-2.2.7.pom
+Copyright 2006 Odysseus Software GmbH
+
+juel-impl-2.2.7.jar
+===================
+Licensed under Apache 2.0
+Source Code can be found at: https://github.com/beckchr/juel/juel-impl
+License terms can be found at: http://maven.ibiblio.org/maven2/de/odysseus/juel/juel-impl/2.2.7/juel-impl-2.2.7.pom
+Copyright 2006 Odysseus Software GmbH
+
+jul-to-slf4j-1.7.21.jar
+=======================
+Licensed under MIT
+Source Code can be found at: https://github.com/qos-ch/slf4j/jul-to-slf4j
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/org/slf4j/jul-to-slf4j/1.7.21/jul-to-slf4j-1.7.21.pom
+Copyright 2005 QOS.ch
+
+metrics-core-3.2.2.jar
+======================
+Licensed under Apache 2.0
+Source Code can be found at: http://github.com/dropwizard/metrics/metrics-core/
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/io/dropwizard/metrics/metrics-core/3.2.2/metrics-core-3.2.2.pom
+2012 Copyright 2010-2012 Coda Hale and Yammer, Inc.
+
+opendmk-1.0-b2.jar
+==================
+Licensed under CDDL 1.0
+License terms can be found at: https://github.com/xtreemfs/opendmk/blob/master/LEGAL_NOTICES/license.txt
+2007 Copyright © 2007 Sun Microsystems,  Inc.,  4150 Network Circle,   Santa Clara,  California 95054, U.S.A. All rights reserved.
+
+org.apache.servicemix.bundles.javax-inject-1_2.jar
+==================================================
+Licensed under Apache 2.0
+Source Code can be found at: http://svn.apache.org/viewvc/servicemix/smx4/bundles/tags/org.apache.servicemix.bundles.javax-inject-1_2
+License terms can be found at: http://maven.ibiblio.org/maven2/org/apache/servicemix/bundles/org.apache.servicemix.bundles.javax-inject/1_2/org.apache.servicemix.bundles.javax-inject-1_2.pom
+Copyright 2005 The Apache Software Foundation
+
+reactive-streams-1.0.0.jar
+==========================
+Licensed under CC0
+Source Code can be found at: git@github.com:reactive-streams/reactive-streams.git
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom
+2016 Copyright Statement for Contributions to the Reactive Streams Project
+
+rxjava-2.1.0.jar
+================
+Licensed under Apache 2.0
+Source Code can be found at: https://github.com/ReactiveX/RxJava.git
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/io/reactivex/rxjava2/rxjava/2.1.0/rxjava-2.1.0.pom
+2016 Copyright (c) 2016-present, RxJava Contributors.
+
+slf4j-api-1.7.21.jar
+====================
+Licensed under MIT
+Source Code can be found at: https://github.com/qos-ch/slf4j/slf4j-api
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.pom
+Copyright 2005 QOS.ch
+
+slf4j-jdk14-1.7.21.jar
+======================
+Licensed under MIT
+Source Code can be found at: https://github.com/qos-ch/slf4j/slf4j-jdk14
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/org/slf4j/slf4j-jdk14/1.7.21/slf4j-jdk14-1.7.21.pom
+Copyright 2005 QOS.ch
+
+super-csv-2.4.0.jar
+===================
+Licensed under Apache 2.0
+Source Code can be found at: https://github.com/super-csv/super-csv/super-csv
+License terms can be found at: http://mirrors.ibiblio.org/pub/mirrors/maven2/net/sf/supercsv/super-csv/2.4.0/super-csv-2.4.0.pom
+Copyright 2007 Super CSV
+
+swagger-models-1.5.9.jar
+========================
+Licensed under Apache 2.0
+Source Code can be found at: https://github.com/swagger-api/swagger-core/modules/swagger-models
+License terms can be found at: http://repo.jfrog.org/artifactory/list/repo1/io/swagger/swagger-models/1.5.9/swagger-models-1.5.9.pom
+2016 Copyright 2016 SmartBear Software
+
+validation-api-1.1.0.Final.jar
+==============================
+Licensed under Apache 2.0
+Source Code can be found at: https://github.com/beanvalidation/beanvalidation-api
+License terms can be found at: http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+2009 Copyright 2009-2013, Red Hat, Inc. and/or its affiliates, and individual contributors

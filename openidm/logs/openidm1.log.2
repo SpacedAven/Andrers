@@ -1,0 +1,988 @@
+Mar 20, 2018 6:33:06 PM org.forgerock.openidm.logging.LogServiceTracker logEntry
+SEVERE: Bundle: org.forgerock.openidm.repo-opendj [10] FrameworkEvent ERROR
+org.apache.felix.log.LogException: org.osgi.framework.BundleException: Activator start error in bundle org.forgerock.openidm.repo-opendj [10].
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:2276)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:2144)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1371)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:308)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.felix.log.LogException: org.forgerock.opendj.server.embedded.EmbeddedDirectoryServerException: An error occurred while attempting to start the embedded server with server root '/Users/vegardaven/Documents/openidm/db/openidm/opendj' : InitializationException: The Directory Server could not acquire an exclusive lock on file /Users/vegardaven/Documents/openidm/db/openidm/opendj/locks/server.lock: The exclusive lock requested for file /Users/vegardaven/Documents/openidm/db/openidm/opendj/locks/server.lock was not granted, which indicates that another process already holds a shared or exclusive lock on that file. This generally means that another instance of this server is already running (DirectoryServer.java:1204 EmbeddedDirectoryServer.java:490 Activator.java:522 Activator.java:348 Activator.java:161 SecureAction.java:697 Felix.java:2226 Felix.java:2144 Felix.java:1371 FrameworkStartLevelImpl.java:308 Thread.java:748)
+	at org.forgerock.opendj.server.embedded.EmbeddedDirectoryServer.start(EmbeddedDirectoryServer.java:492)
+	at org.forgerock.openidm.repo.opendj.impl.Activator.setupEmbeddedServer(Activator.java:522)
+	at org.forgerock.openidm.repo.opendj.impl.Activator.initializeEmbeddedServer(Activator.java:348)
+	at org.forgerock.openidm.repo.opendj.impl.Activator.start(Activator.java:161)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:697)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:2226)
+	... 4 more
+
+Mar 20, 2018 6:33:11 PM org.forgerock.openidm.config.persistence.RepoPersistenceManager checkReady
+INFO: Failed to bootstrap repo, returned null
+Mar 20, 2018 6:33:16 PM org.forgerock.openidm.config.persistence.RepoPersistenceManager checkReady
+INFO: Failed to bootstrap repo, returned null
+Mar 20, 2018 6:33:21 PM org.forgerock.openidm.config.persistence.RepoPersistenceManager checkReady
+INFO: Failed to bootstrap repo, returned null
+Mar 20, 2018 6:33:26 PM org.forgerock.openidm.config.persistence.RepoPersistenceManager checkReady
+INFO: Failed to bootstrap repo, returned null
+Mar 20, 2018 6:33:31 PM org.forgerock.openidm.config.persistence.RepoPersistenceManager checkReady
+INFO: Failed to bootstrap repo, returned null
+Mar 20, 2018 6:33:36 PM org.forgerock.openidm.config.persistence.RepoPersistenceManager checkReady
+INFO: Failed to bootstrap repo, returned null
+Mar 20, 2018 6:33:37 PM org.forgerock.openidm.maintenance.impl.MaintenanceService activate
+INFO: Maintenance service started.
+Mar 20, 2018 6:33:38 PM org.apache.aries.blueprint.container.BlueprintExtender start
+INFO: No quiesce support is available, so blueprint components will not participate in quiesce operations
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService activate
+INFO: ConnectorInfoProviderService with OpenICF Version[1.5] is activated.
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.info.impl.HealthService activate
+INFO: OpenIDM Health Service component is activated.
+Mar 20, 2018 6:33:39 PM org.forgerock.api.models.Items fromAnnotatedType
+INFO: Asked for Items for annotated type, but type does not have required RequestHandler annotation. No api descriptor will be available for class org.forgerock.monitoring.DropwizardMetricsCollectionResourceProvider
+Mar 20, 2018 6:33:39 PM org.forgerock.api.models.Resource findHandlerAnnotation
+INFO: Asked for Resource for annotated type, but type does not have required RequestHandler annotation. No api descriptor will be available for class org.forgerock.monitoring.DropwizardMetricsCollectionResourceProvider
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.servlet.internal.ServletConnectionFactory activate
+INFO: Servlet ConnectionFactory created.
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.router.impl.JsonResourceRouterService activate
+INFO: IDMConnectionFactory service activated.
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.maintenance.impl.UpdateLogServiceImpl activate
+INFO: Update Log service started.
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.maintenance.upgrade.UpdateManagerImpl activate
+FINE: Activating UpdateManagerImpl {suppressMetatypeWarning=true, service.pid=org.forgerock.openidm.maintenance.updatemanager, service.vendor=ForgeRock AS., service.description=Product Update Manager, component.name=org.forgerock.openidm.maintenance.updatemanager, component.id=32}
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.maintenance.upgrade.UpdateManagerImpl activate
+FINE: Obtained OSGiFrameworkService
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.maintenance.impl.UpdateService activate
+INFO: Update service started.
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.idp.impl.IdentityProviderService activate
+INFO: OpenIDM Identity Provider Service is activated.
+Mar 20, 2018 6:33:39 PM org.forgerock.openidm.external.rest.RestService activate
+INFO: External REST connectivity started.
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.Activator start
+INFO: EventAdmin support enabled, servlet events will be postet to topics.
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.Activator start
+INFO: LogService support enabled, log events will be created.
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.Activator start
+INFO: Pax Web started
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Logging initialized @41047ms
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.jetty.internal.JettyServerImpl start
+INFO: Pax Web available at [0.0.0.0]:[8080]
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.jetty.internal.JettyServerImpl start
+INFO: Pax Web available at [0.0.0.0]:[8443]
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.jetty.internal.JettyServerImpl start
+INFO: Pax Web available at [0.0.0.0]:[8444]
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl getService
+INFO: Binding bundle: [org.apache.felix.webconsole [201]] to http service
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.jetty.internal.HttpServiceContext <init>
+INFO: registering context org.apache.felix.webconsole.internal.servlet.OsgiManagerHttpContext@5bebda6d, with context-name: 
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Started HttpServiceContext{httpContext=org.apache.felix.webconsole.internal.servlet.OsgiManagerHttpContext@5bebda6d}
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: jetty-9.2.z-SNAPSHOT
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8080@1638832c{HTTP/1.1}{0.0.0.0:8080}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:946)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8443@76921ece{SSL-http/1.1}{0.0.0.0:8443}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:946)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8444@726b0995{SSL-http/1.1}{0.0.0.0:8444}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:946)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED org.ops4j.pax.web.service.jetty.internal.JettyServerWrapper@224c8a12: MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:329)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:946)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 26 more
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 26 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	... 26 more
+
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.HttpServiceStarted registerServlet
+SEVERE: Could not start the servlet context for context path []
+MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:329)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:946)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 26 more
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 26 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	... 26 more
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: jetty-9.2.z-SNAPSHOT
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8080@1638832c{HTTP/1.1}{0.0.0.0:8080}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerResources(HttpServiceStarted.java:264)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerResources(HttpServiceProxy.java:71)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:951)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8443@76921ece{SSL-http/1.1}{0.0.0.0:8443}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerResources(HttpServiceStarted.java:264)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerResources(HttpServiceProxy.java:71)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:951)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8444@726b0995{SSL-http/1.1}{0.0.0.0:8444}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerResources(HttpServiceStarted.java:264)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerResources(HttpServiceProxy.java:71)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:951)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED org.ops4j.pax.web.service.jetty.internal.JettyServerWrapper@224c8a12: MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:329)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerResources(HttpServiceStarted.java:264)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerResources(HttpServiceProxy.java:71)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:951)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 25 more
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 25 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	... 25 more
+
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.HttpServiceStarted registerServlet
+SEVERE: Could not start the servlet context for context path []
+MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:329)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerResources(HttpServiceStarted.java:264)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerResources(HttpServiceProxy.java:71)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager.bindHttpService(OsgiManager.java:951)
+	at org.apache.felix.webconsole.internal.servlet.OsgiManager$HttpServiceTracker.addingService(OsgiManager.java:876)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:870)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:229)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:901)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 25 more
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 25 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	... 25 more
+
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl getService
+INFO: Binding bundle: [org.forgerock.openidm.httpcontext [16]] to http service
+Mar 20, 2018 6:33:40 PM org.forgerock.openidm.http.ContextRegistrator activateSecurityConfigurators
+INFO: Activated security configurator org.forgerock.openidm.http.internal.JettySecurityConfigurator
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl getService
+INFO: Binding bundle: [org.forgerock.openidm.servlet-registrator [121]] to http service
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl getService
+INFO: Binding bundle: [org.forgerock.openidm.api-servlet [123]] to http service
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.jetty.internal.HttpServiceContext <init>
+INFO: registering context org.ops4j.pax.web.service.internal.DefaultSharedWebContainerContext@5eedf0ce, with context-name: 
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Started HttpServiceContext{httpContext=org.ops4j.pax.web.service.internal.DefaultSharedWebContainerContext@5eedf0ce}
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: jetty-9.2.z-SNAPSHOT
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8080@1638832c{HTTP/1.1}{0.0.0.0:8080}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton.registerServlet(ServletRegistrationSingleton.java:110)
+	at org.forgerock.openidm.servlet.internal.ErrorServletComponent.activate(ErrorServletComponent.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invokeMethod(BaseMethod.java:224)
+	at org.apache.felix.scr.impl.inject.BaseMethod.access$500(BaseMethod.java:39)
+	at org.apache.felix.scr.impl.inject.BaseMethod$Resolved.invoke(BaseMethod.java:617)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invoke(BaseMethod.java:501)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:302)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:294)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:297)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:108)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:906)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:879)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:748)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:1012)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:968)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1215)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1136)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:945)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:881)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1167)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:127)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8443@76921ece{SSL-http/1.1}{0.0.0.0:8443}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton.registerServlet(ServletRegistrationSingleton.java:110)
+	at org.forgerock.openidm.servlet.internal.ErrorServletComponent.activate(ErrorServletComponent.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invokeMethod(BaseMethod.java:224)
+	at org.apache.felix.scr.impl.inject.BaseMethod.access$500(BaseMethod.java:39)
+	at org.apache.felix.scr.impl.inject.BaseMethod$Resolved.invoke(BaseMethod.java:617)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invoke(BaseMethod.java:501)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:302)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:294)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:297)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:108)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:906)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:879)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:748)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:1012)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:968)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1215)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1136)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:945)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:881)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1167)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:127)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED 0.0.0.0:8444@726b0995{SSL-http/1.1}{0.0.0.0:8444}: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton.registerServlet(ServletRegistrationSingleton.java:110)
+	at org.forgerock.openidm.servlet.internal.ErrorServletComponent.activate(ErrorServletComponent.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invokeMethod(BaseMethod.java:224)
+	at org.apache.felix.scr.impl.inject.BaseMethod.access$500(BaseMethod.java:39)
+	at org.apache.felix.scr.impl.inject.BaseMethod$Resolved.invoke(BaseMethod.java:617)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invoke(BaseMethod.java:501)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:302)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:294)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:297)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:108)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:906)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:879)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:748)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:1012)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:968)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1215)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1136)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:945)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:881)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1167)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:127)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Mar 20, 2018 6:33:40 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: FAILED org.ops4j.pax.web.service.jetty.internal.JettyServerWrapper@224c8a12: MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:329)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton.registerServlet(ServletRegistrationSingleton.java:110)
+	at org.forgerock.openidm.servlet.internal.ErrorServletComponent.activate(ErrorServletComponent.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invokeMethod(BaseMethod.java:224)
+	at org.apache.felix.scr.impl.inject.BaseMethod.access$500(BaseMethod.java:39)
+	at org.apache.felix.scr.impl.inject.BaseMethod$Resolved.invoke(BaseMethod.java:617)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invoke(BaseMethod.java:501)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:302)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:294)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:297)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:108)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:906)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:879)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:748)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:1012)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:968)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1215)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1136)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:945)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:881)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1167)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:127)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 44 more
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 44 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	... 44 more
+
+Mar 20, 2018 6:33:40 PM org.ops4j.pax.web.service.internal.HttpServiceStarted registerServlet
+SEVERE: Could not start the servlet context for context path []
+MultiException[java.net.BindException: Address already in use, java.net.BindException: Address already in use, java.net.BindException: Address already in use]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:329)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.ops4j.pax.web.service.jetty.internal.JettyServerImpl$1.start(JettyServerImpl.java:281)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:221)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:195)
+	at org.ops4j.pax.web.service.internal.HttpServiceStarted.registerServlet(HttpServiceStarted.java:179)
+	at org.ops4j.pax.web.service.internal.HttpServiceProxy.registerServlet(HttpServiceProxy.java:64)
+	at org.forgerock.openidm.servletregistration.impl.ServletRegistrationSingleton.registerServlet(ServletRegistrationSingleton.java:110)
+	at org.forgerock.openidm.servlet.internal.ErrorServletComponent.activate(ErrorServletComponent.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invokeMethod(BaseMethod.java:224)
+	at org.apache.felix.scr.impl.inject.BaseMethod.access$500(BaseMethod.java:39)
+	at org.apache.felix.scr.impl.inject.BaseMethod$Resolved.invoke(BaseMethod.java:617)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invoke(BaseMethod.java:501)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:302)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:294)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:297)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:108)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:906)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:879)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:748)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:1012)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:968)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1215)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1136)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:945)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:881)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1167)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:127)
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:991)
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:839)
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:546)
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4557)
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3549)
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:348)
+	at org.ops4j.pax.web.service.internal.Activator.updateController(Activator.java:357)
+	at org.ops4j.pax.web.service.internal.Activator$3.run(Activator.java:294)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 44 more
+	Suppressed: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+		at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+		at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+		at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+		at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+		... 44 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:321)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	... 44 more
+
+Mar 20, 2018 6:33:40 PM org.forgerock.openidm.servlet.internal.ErrorServletComponent activate
+INFO: Registered servlet at /error
+Mar 20, 2018 6:33:55 PM org.forgerock.openidm.info.impl.HealthService$4 run
+SEVERE: OpenIDM failure during startup, ACTIVE_NOT_READY: Not all modules started [] [org.forgerock.openidm.repo-opendj] []
+Mar 20, 2018 6:34:22 PM org.apache.aries.blueprint.container.BlueprintExtender$3 run
+INFO: Destroying BlueprintContainer for bundle org.apache.aries.blueprint
+Mar 20, 2018 6:34:22 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl ungetService
+INFO: Unbinding bundle: [org.apache.felix.webconsole [201]]
+Mar 20, 2018 6:34:22 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl ungetService
+INFO: Unbinding bundle: [org.forgerock.openidm.httpcontext [16]]
+Mar 20, 2018 6:34:22 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl ungetService
+INFO: Unbinding bundle: [org.forgerock.openidm.api-servlet [123]]
+Mar 20, 2018 6:34:22 PM org.ops4j.pax.web.service.internal.HttpServiceFactoryImpl ungetService
+INFO: Unbinding bundle: [org.forgerock.openidm.servlet-registrator [121]]
+Mar 20, 2018 6:34:22 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Stopped 0.0.0.0:8080@1638832c{HTTP/1.1}{0.0.0.0:8080}
+Mar 20, 2018 6:34:22 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Stopped 0.0.0.0:8443@76921ece{SSL-http/1.1}{0.0.0.0:8443}
+Mar 20, 2018 6:34:22 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Stopped 0.0.0.0:8444@726b0995{SSL-http/1.1}{0.0.0.0:8444}
+Mar 20, 2018 6:34:22 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Stopped HttpServiceContext{httpContext=org.apache.felix.webconsole.internal.servlet.OsgiManagerHttpContext@5bebda6d}
+Mar 20, 2018 6:34:22 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Stopped HttpServiceContext{httpContext=org.ops4j.pax.web.service.internal.DefaultSharedWebContainerContext@5eedf0ce}
+Mar 20, 2018 6:34:22 PM org.ops4j.pax.web.service.internal.Activator stop
+INFO: Pax Web stopped
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.external.rest.RestService deactivate
+INFO: External REST connectivity stopped.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.idp.impl.IdentityProviderService deactivate
+INFO: Identity Provider Service provider is deactivated.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.maintenance.impl.UpdateService deactivate
+INFO: Update service stopped.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.maintenance.impl.UpdateLogServiceImpl deactivate
+INFO: Update Log service stopped.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.router.impl.JsonResourceRouterService deactivate
+INFO: IDMConnectionFactory service deactivated.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.info.impl.HealthService deactivate
+INFO: OpenIDM Health Service component is deactivated.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.provisioner.openicf.impl.ConnectorInfoProviderService deactivate
+INFO: ConnectorInfoProviderService is deactivated.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.maintenance.impl.MaintenanceService deactivate
+INFO: Maintenance service stopped.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.crypto.impl.CryptoServiceImpl deactivate
+INFO: CryptoService stopped.
+Mar 20, 2018 6:34:23 PM org.forgerock.openidm.keystore.impl.SharedKeyServiceImpl deactivate
+INFO: Shared-key service stopped.

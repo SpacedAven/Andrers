@@ -1,0 +1,22 @@
+<!--
+  Copyright 2015-2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+<li locale="{{locale}}">
+    <div class="form-group">
+        <strong class="col-sm-3">{{locale}}</strong>
+
+        <div class="col-sm-8">
+            {{#if useCodeMirror}}
+            <textarea class="email-message-code-mirror-disabled localizedText form-control" disabled="true">{{text}}</textarea>
+            {{else}}
+            <p class="localizedText">{{text}}</p>
+            {{/if}}
+        </div>
+
+        <button class="col-sm-1 btn btn-link delete"><i class="fa fa-times"></i></button>
+    </div>
+</li>

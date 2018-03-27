@@ -1,0 +1,61 @@
+{{!--
+    Copyright 2017 ForgeRock AS. All Rights Reserved
+
+    Use of this code requires a commercial software license with ForgeRock AS.
+    or with one of its affiliates. All use shall be exclusively subject
+    to such license between the licensee and ForgeRock AS.
+--}}
+<div class="profile-backbar">
+    <div class="container">
+
+        <h3 class="profile-backbar-header">
+            <a href="#profile/sharing" class="fr-back-crumb">{{t "templates.sharing.header"}}</a>
+        </h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <main id="resourceDetails">
+                <div class="page-header">
+                    <div class="page-header clearfix">
+                        <img class="fr-resource-detail-image pull-left" src="{{#if resource.icon_uri}}{{resource.icon_uri}}{{else}}images/resource.png{{/if}}"/>
+                        <h4 class="page-type">{{resource.type}}</h4>
+                        <h1>{{resource.name}}</h1>
+                    </div>
+
+                </div>
+
+                <div class="fr-panel-list fr-hover-panel-list">
+                    {{#if noResources}}
+                        <div class="well text-muted text-center">
+                            <h4>{{t "templates.sharing.notSharedResource"}}</h4>
+                        </div>
+                    {{else}}
+                        {{#each resource.policy.permissions}}
+                            <div class="panel panel-default fr-hover-panel fr-first-list-panel fr-last-list-panel">
+                                <div class="panel-body resource-container">
+                                    <div class="row fr-three-column fr-three-column-large fr-icon-name-column">
+                                        <div class="col-sm-6 fr-column">
+                                            <span class="fr-user-icon pull-left">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <span class="fr-panel-name">{{this.subject}}</span>
+                                        </div>
+                                        <div class="fr-panel-list-description col-sm-6 fr-column">
+                                            <div class="fr-panel-name fr-profile-additional-details text-muted">
+                                                {{#each this.scopes}}
+                                                    <span class="fr-scope-badge badge">{{this}}</span>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

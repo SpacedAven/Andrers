@@ -1,0 +1,49 @@
+{{!--
+    Copyright 2017 ForgeRock AS. All Rights Reserved
+
+    Use of this code requires a commercial software license with ForgeRock AS.
+    or with one of its affiliates. All use shall be exclusively subject
+    to such license between the licensee and ForgeRock AS.
+--}}
+<div class="fr-profile-page">
+    <div class="page-header">
+        <h1>{{t "templates.sharing.header"}}</h1>
+        <p class="panel-description">{{t "templates.sharing.desc"}}</p>
+    </div>
+
+    <form id="sharing">
+        <div class="fr-panel-list fr-hover-panel-list">
+            {{#equals resourceSet.length 0}}
+                <div class="well text-muted text-center">
+                    <h4>{{t "templates.sharing.noResourceSets"}}</h4>
+                </div>
+            {{else}}
+                {{#each resourceSet}}
+                    <div class="panel panel-default fr-hover-panel fr-first-list-panel fr-last-list-panel">
+
+                        <a href="#uma/resourceDetails/{{this._id}}">
+
+                            <div class="panel-body resource-container">
+                                <div class="row fr-three-column fr-three-column-large">
+                                    <div class="col-sm-4 fr-column">
+                                        <img class="fr-panel-logo" src="{{#if this.icon_uri}}{{icon_uri}}{{else}}images/resource.png{{/if}}"/>
+                                        <span class="fr-panel-name">{{this.name}}</span>
+                                    </div>
+                                    <div class="fr-panel-list-description col-sm-7 fr-column">
+                                        <div class="fr-profile-additional-details text-muted">
+                                            {{this.shareText}}
+                                        </div>
+                                    </div>
+                                    <div class="fr-column col-sm-1 fr-panel-list-arrow">
+                                        <i class="fa fa-pencil text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {{/each}}
+            {{/equals}}
+
+        </div>
+    </form>
+</div>

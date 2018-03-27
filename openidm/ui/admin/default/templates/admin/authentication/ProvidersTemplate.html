@@ -1,0 +1,78 @@
+{{!
+  Copyright 2016-2017 ForgeRock AS. All Rights Reserved
+
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+}}
+<div class="panel">
+    <div class="panel-body">
+
+        <p class="panel-description">{{t "templates.auth.providers.desc"}}</p>
+
+        <div class="panel-container">
+            <div class="panel provider-panel {{#unless localChecked}}disabled{{/unless}}">
+                <div class="panel-body card">
+                    <div class="pull-left provider-radio-container">
+                        <div class="radio radio-button">
+                            <input class="providerSelection" type="radio" name="providerSelection" id="providerSelectionLocal" value="local" {{#if localChecked}}checked{{/if}}>
+                            <label for="providerSelectionLocal"></label>
+                        </div>
+                    </div>
+
+                    <div class="image circle pull-left">
+                        <span>
+                            <i class="fa fa-hdd-o"></i>
+                        </span>
+                    </div>
+
+                    <div class="media">
+                        <h3 class="media-heading">
+                            {{t "templates.auth.providers.localLabel"}}
+                            {{#each providerList}}
+                                {{> providers/_providerBadge}}
+                            {{/each}}
+                        </h3>
+
+                        <p class="media-body text-muted">{{t "templates.auth.providers.localDesc"}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel provider-panel {{#if localChecked}}disabled{{/if}}">
+                <div class="panel-body card">
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-link edit-am-module" type="button"><i class="fa fa-pencil"></i></button>
+                    </div>
+
+                    <div class="pull-left provider-radio-container">
+                        <div class="radio radio-button">
+                            <input class="providerSelection" type="radio" name="providerSelection" id="providerSelectionAM" value="am" {{#unless localChecked}}checked{{/unless}}>
+                            <label for="providerSelectionAM"></label>
+                        </div>
+                    </div>
+
+                    <div class="image circle pull-left">
+                        <span>
+                            <img src="img/icon-forgerock-mark-white.png" style="width:21px;" />
+                        </span>
+                    </div>
+
+                    <div class="media">
+                        <h3 class="media-heading">{{t "templates.auth.providers.amLabel"}}</h3>
+                        <p class="media-body text-muted">{{t "templates.auth.providers.amDesc"}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> _alert
+        hidden=true
+        class="sessionResetAlert"
+        type="warning"
+        heading="common.form.info"
+        message="templates.auth.sessionResetError"
+        }}
+
+    </div>
+</div>

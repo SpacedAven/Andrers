@@ -1,0 +1,31 @@
+<!--
+  Copyright 2015-2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+<div class="translationMapGroup well" field="{{fieldName}}" data-uses-codemirror="{{useCodeMirror}}">
+    <h2 class="panel-title">{{t label}}</h2>
+    <ul class="list-unstyled">
+        {{#each property}}
+            {{> selfservice/_translationItem locale=@key text=this useCodeMirror=../useCodeMirror}}
+        {{/each}}
+    </ul>
+
+    <div class="form-group">
+        <div class="col-sm-3">
+            <input type="text" class="newTranslationLocale form-control" placeholder="{{t "templates.selfservice.locale"}}"/>
+        </div>
+
+        <div class="col-sm-8">
+            {{#if useCodeMirror}}
+                <textarea class="email-message-code-mirror newTranslationText form-control" placeholder="{{t "templates.selfservice.localText"}}"></textarea>
+            {{else}}
+                <input type="text" class="newTranslationText form-control" placeholder="{{t "templates.selfservice.localText"}}"/>
+            {{/if}}
+        </div>
+
+        <button type="button" disabled class="col-sm-1 btn btn-primary add">{{t "common.form.add"}}</button>
+    </div>
+</div>

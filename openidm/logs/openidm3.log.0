@@ -1,0 +1,52 @@
+Mar 20, 2018 6:37:51 PM org.forgerock.openidm.core.FilePropertyAccessor loadProps
+INFO: Using properties at /Users/vegardaven/Desktop/IS304/oving/conf/boot/boot.properties
+Mar 20, 2018 6:37:51 PM org.forgerock.openidm.core.FilePropertyAccessor loadProps
+INFO: Using properties at /Users/vegardaven/Desktop/IS304/oving/conf/boot/boot.properties
+Mar 20, 2018 6:37:52 PM org.forgerock.openidm.config.crypto.ConfigCrypto <init>
+INFO: Using keystore alias openidm-sym-default to handle config encryption
+Mar 20, 2018 6:37:53 PM org.forgerock.openidm.config.persistence.Activator start
+INFO: OpenIDM is starting from /Users/vegardaven/Desktop/IS304/oving
+Mar 20, 2018 6:37:53 PM org.forgerock.openidm.config.persistence.ConfigBootstrapHelper getBootConfig
+INFO: Bootstrapping with settings from configuration file /Users/vegardaven/Desktop/IS304/oving/conf/repo.jdbc.json
+Mar 20, 2018 6:37:53 PM org.forgerock.openidm.config.persistence.ConfigBootstrapHelper getBootConfig
+INFO: Bootstrapping with settings from configuration file /Users/vegardaven/Desktop/IS304/oving/conf/datasource.jdbc-default.json
+Mar 20, 2018 6:37:53 PM org.forgerock.openidm.repo.jdbc.impl.Activator start
+INFO: Bootstrapping JDBC repository
+Mar 20, 2018 6:37:53 PM org.forgerock.openidm.datasource.jdbc.impl.NonPoolingDataSourceFactory newInstance
+INFO: Using DB connection configured via Driver Manager with Driver com.mysql.jdbc.Driver and URL jdbc:mysql://&{openidm.repo.host}:&{openidm.repo.port}/openidm?allowMultiQueries=true&characterEncoding=utf8
+Mar 20, 2018 6:37:54 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:37:59 CET 2018
+Mar 20, 2018 6:37:59 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:38:09 CET 2018
+Mar 20, 2018 6:38:09 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:38:24 CET 2018
+Mar 20, 2018 6:38:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:38:44 CET 2018
+Mar 20, 2018 6:38:44 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:39:09 CET 2018
+Mar 20, 2018 6:39:09 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:39:39 CET 2018
+Mar 20, 2018 6:39:39 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:40:14 CET 2018
+Mar 20, 2018 6:40:14 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:40:54 CET 2018
+Mar 20, 2018 6:40:54 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:41:39 CET 2018
+Mar 20, 2018 6:41:39 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:42:29 CET 2018
+Mar 20, 2018 6:42:29 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:43:24 CET 2018
+Mar 20, 2018 6:43:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:44:24 CET 2018
+Mar 20, 2018 6:44:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:45:24 CET 2018
+Mar 20, 2018 6:45:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:46:24 CET 2018
+Mar 20, 2018 6:46:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:47:24 CET 2018
+Mar 20, 2018 6:47:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:48:24 CET 2018
+Mar 20, 2018 6:48:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:49:24 CET 2018
+Mar 20, 2018 6:49:24 PM org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService testConnection
+WARNING: Unable to get DataSource connection. Next attempt at Tue Mar 20 18:50:24 CET 2018

@@ -1,0 +1,274 @@
+{{!
+  Copyright 2015-2017 ForgeRock AS. All Rights Reserved
+
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+}}
+<div class="sync-details-container">
+    {{#if syncDetails}}
+    <div class="sync-results">
+        <ul class="list-group data-panel">
+            <li class="list-group-item no-sort">
+                <div class="toggle-data" id="showReconResults">
+                    <div class="pull-right toggle-arrow">
+                        <i class="fa {{#if showReconResults}}fa-angle-down{{else}}fa-angle-up{{/if}} fa-lg"></i>
+                    </div>
+                    <div class="media-left">
+                        <h4>{{t "templates.mapping.reconAnalysis.reconciliationResults"}}</h4>
+                    </div>
+                    <div class="data-panel-heading-stat text-success">
+                        <i class="fa fa-check-circle fa-2x"></i>
+                        <span class="display-number">{{syncDetails.statusSummary.SUCCESS}}</span>
+                        <span>{{t "templates.mapping.reconAnalysis.succeeded"}}<span>
+                    </div>
+                    <div class="data-panel-heading-stat text-danger">
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <span class="display-number">{{syncDetails.statusSummary.FAILURE}}</span>
+                        <span>{{t "templates.mapping.reconAnalysis.failed"}}<span>
+                    </div>
+                </div>
+            </li>
+            {{#if showReconResults}}
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa failure-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.ambiguous"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.AMBIGUOUS}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.ambiguousMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa failure-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.sourceMissing"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.SOURCE_MISSING}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.sourceMissingMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa failure-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.missing"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.MISSING}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.missingMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa failure-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.foundAlreadyLinked"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.FOUND_ALREADY_LINKED}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.foundAlreadyLinkedMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa failure-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.unqualified"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.UNQUALIFIED}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.unqualifiedMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa failure-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.unassigned"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.UNASSIGNED}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.unassignedMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa warning-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.targetIgnored"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.TARGET_IGNORED}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.targetIgnoredMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa warning-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.sourceIgnored"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.SOURCE_IGNORED}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.sourceIgnoredMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa success-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.confirmed"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.CONFIRMED}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.confirmedMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa success-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.found"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.FOUND}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.foundMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4">
+                        <i class="fa success-display fa-circle"></i>
+                        <span>{{t "templates.mapping.reconAnalysis.absent"}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{syncDetails.situationSummary.ABSENT}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-title="{{t "templates.mapping.reconAnalysis.absentMessage"}}" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            {{/if}}
+        </ul>
+        <ul class="list-group data-panel">
+            <li class="list-group-item no-sort">
+                <div class="toggle-data" id="showDuration">
+                <div class="pull-right toggle-arrow">
+                    <i class="fa {{#if showDuration}}fa-angle-down{{else}}fa-angle-up{{/if}} fa-lg"></i>
+                </div>
+                    <div class="media-left">
+                        <h4>{{t "templates.mapping.reconAnalysis.duration"}}</h4>
+                    </div>
+                    <div class="data-panel-heading-stat text-success">
+                        <span class="display-number">{{millisecondsToTimeDisplay syncDetails.duration}}</span>
+                    </div>
+                </div>
+            </li>
+            {{#if showDuration}}
+            {{#each syncDetails.durationSummary}}
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4 margin-top-10">
+                        <span>{{camelCaseToTitle @key}}</span>
+                        <span class="badge">{{count}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{millisecondsToTimeDisplay sum}}</span>
+                    </div>
+                    <div class="col-sm-4 tooltip-info-circle">
+                        <i data-original-title="{{camelCaseToTitle @key}}" data-title="
+                            <table class='sync-phase-duration-info'>
+                                <tbody>
+                                    <tr>
+                                        <th>{{t "templates.mapping.reconAnalysis.totalTime"}}</th>
+                                        <td>{{millisecondsToTimeDisplay sum}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{t "templates.mapping.reconAnalysis.minimum"}}</th>
+                                        <td>{{millisecondsToTimeDisplay min}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{t "templates.mapping.reconAnalysis.maximum"}}</th>
+                                        <td>{{millisecondsToTimeDisplay max}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{t "templates.mapping.reconAnalysis.mean"}}</th>
+                                        <td>{{millisecondsToTimeDisplay mean}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{{t "templates.mapping.reconAnalysis.standardDeviation"}}</th>
+                                        <td>{{millisecondsToTimeDisplay stdDev}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>" class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+            {{/if}}
+        </ul>
+        {{#if syncDetails.sourceProcessedByNode}}
+        <ul class="list-group data-panel">
+            <li class="list-group-item no-sort">
+                <div class="media-left">
+                    <h4>{{t "templates.mapping.reconAnalysis.recordsProcessedByNode"}}</h4>
+                </div>
+            </li>
+            {{#each  syncDetails.sourceProcessedByNode}}
+            <li class="list-group-item no-sort sync-detail-list">
+                <div class="sync-item row">
+                    <div class="col-sm-4 margin-top-10">
+                        <i class="fa fa-server fr-small-circle bg-primary"></i>
+                        <span>{{@key}}</span>
+                    </div>
+                    <div class="col-sm-4 margin-top-10">
+                        <span class="display-number">{{this}}</span>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+    {{else}}
+    <div class="fr-no-data text-center well">
+        <h4 class="text-muted">{{t "templates.mapping.reconAnalysis.noSync"}}</h4>
+    </div>
+    {{/if}}
+</div>

@@ -1,0 +1,96 @@
+/*
+ * Copyright 2016-2017 ForgeRock AS. All Rights Reserved
+ *
+ * Use of this code requires a commercial software license with ForgeRock AS.
+ * or with one of its affiliates. All use shall be exclusively subject
+ * to such license between the licensee and ForgeRock AS.
+ */
+
+/*global security, properties, openidm */
+
+/**
+ * This security context population script is called when the auth module authenticates a
+ * user from a security context which is related to managed/idpData, and we wish to aggregate
+ * the current security context with the one for the linked managed/user record (if found).
+ *
+ * global properties - auth module-specific properties from authentication.json for the
+ *                     a potential OAUTH or OPENID_CONNECT auth module
+ *      {
+ *          "name" : "",
+ *          "properties" : {
+ *              "augmentSecurityContext": {
+ *                  "type" : "text/javascript",
+ *                  "file" : "auth/populateAsManagedUserFromRelationship.js"
+ *              },
+ *              "queryOnResource" : "managed/google",
+ *              "propertyMapping" : {
+ *                  "userRoles" : "authzRoles",
+ *                  "authenticationId" : "_id"
+ *              }
+ *          },
+ *          "defaultUserRoles" : [
+ *              "openidm-authorized"
+ *          ],
+ *          "resolvers" : [
+ *          ...
+ *          ],
+ *          "authTokenHeader" : "authToken",
+ *          "authResolverHeader" : "provider"
+ *          ...
+ *      }
+ *
+ * global security - map of security context details as have been determined thus far
+ *
+ *      {
+ *          "authorization": {
+ *              "id": "jsmith",
+ *              "component": "managed/google",
+ *              "roles": [ "openidm-authorized" ]
+ *          },
+ *          "authenticationId": "1234567",
+ *      }
+ */
+
+(function () {
+    logger.debug("Augment context for: {}", security.authenticationId);
+
+    var _ = require("lib/lodash"),
+        provider = requestContextMap.provider,
+        baseObject = openidm.read("managed/" + provider + "/" + security.authorization.id, null, ["*","user"]);
+
+    if (!baseObject || !baseObject.user) {
+        throw {
+            "code" : 401,
+            "message" : "Access denied"
+        };
+    }
+
+    var managedUser = openidm.read(baseObject.user._ref, null, ["*", "authzRoles"]);
+
+    if (managedUser.accountStatus !== "active") {
+        throw {
+            "code" : 401,
+            "message" : "Access denied, user inactive"
+        };
+    }
+
+    security.authorization = {
+        "id": managedUser._id,
+        "component": "managed/user",
+        "moduleId" : security.authorization.moduleId,
+        "provider" : provider,
+        "roles": managedUser.authzRoles ?
+            _.uniq(
+                security.authorization.roles.concat(
+                    _.map(managedUser.authzRoles, function (r) {
+                        // appending empty string gets the value from java into a format more familiar to JS
+                        return org.forgerock.json.resource.ResourcePath.valueOf(r._ref).leaf() + "";
+                    })
+                )
+            ) :
+            security.authorization.roles
+    };
+
+    return security;
+
+}());

@@ -1,0 +1,30 @@
+OpenDJ software provides an LDAPv3-compliant directory service, developed
+for the Java platform, delivering a high-performance, highly available, and
+secure store for the identities managed by your organization.
+
+The easy installation process, combined with the power of the Java platform,
+makes this the simplest and fastest directory service to deploy and manage.
+OpenDJ software comes with plenty of tools and a full-featured LDAP SDK for
+Java. OpenDJ software also offers REST access to directory data over HTTP.
+
+OpenDJ software is free to download, evaluate, and use for developing your
+applications and solutions. ForgeRock offers training and support
+subscriptions to help you get the most out of your deployment.
+
+Before You Install
+------------------
+ * A Java SE 8 or later runtime environment must be installed.
+ * The system must have at least 100MB of disk space and 256MB of free memory
+   to run OpenDJ directory server for evaluation purposes.
+
+How To Install OpenDJ
+=====================
+Once you have downloaded and unzipped the OpenDJ directory server binaries,
+you can install OpenDJ using the interactive command-line mode setup tool:
+
+ 1. From the top level of your installation directory, run the setup command:
+
+    (Unix, Linux) setup
+    (Windows) setup.bat
+
+ 2. Follow the prompts to provide the required installation information.

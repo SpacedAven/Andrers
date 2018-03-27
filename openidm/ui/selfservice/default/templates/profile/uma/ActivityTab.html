@@ -1,0 +1,43 @@
+{{!--
+  Copyright 2017 ForgeRock AS. All Rights Reserved
+
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+--}}
+<div class="fr-profile-page">
+    <div class="page-header">
+        <h1>{{t "templates.activity.header"}}</h1>
+        <p class="panel-description">{{t "templates.activity.headerDescription"}}</p>
+    </div>
+
+    <form id="activity">
+        <div class="fr-panel-list fr-hover-panel-list">
+            {{#each auditHistory}}
+            <div class="panel fr-hover-panel panel-default">
+                <div class="panel-body">
+                    <div class="row fr-three-column fr-stacked-text-container">
+                        <div class="fr-panel-list-description col-sm-9">
+                            <div class="pull-left media-left">
+                                <img class="fr-panel-logo img-rounded" src="{{#if icon_uri}}{{icon_uri}}{{else}}images/resource.png{{/if}}"/>
+                            </div>
+                            <div class="fr-stacked-text media-middle">
+                                <div class="fr-major-text">{{resourceSetName}}</div>
+                                <div class="fr-minor-text text-muted">{{action}}</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-right padding-top-10">
+                            <div class="fr-major-text text-muted ">{{eventTime}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="well text-center">
+                <h4 class="text-muted">{{t "templates.activity.noActivity"}}</h4>
+            </div>
+            {{/each}}
+        </div>
+    </form>
+
+</div>
